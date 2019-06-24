@@ -1,0 +1,27 @@
+@import "~src/settings";
+
+.content {
+  background-color: white;
+  color: black;
+  height: $content-height;
+  transition: background-color 225ms cubic-bezier(0.82, -0.01, 0.17, 1.01);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:host-context(.theme-white) {
+
+  .content {
+    background-color: white;
+    color: black;
+  }
+}
+
+:host-context(.theme-black) {
+
+  .content {
+    background-color: black;
+    color: white;
+  }
+}

@@ -1,0 +1,21 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ContentComponent } from './components/content/content.component';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './components/home/home.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
+
+const components = [
+  ContentComponent, HeaderComponent, HomeComponent, DashboardComponent
+];
+
+@NgModule({
+  imports: [CommonModule, AppRoutingModule, SharedModule, FormsModule],
+  declarations: [...components],
+  exports: [...components, AppRoutingModule, SharedModule]
+})
+export class CoreModule {
+}
