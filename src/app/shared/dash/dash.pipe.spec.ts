@@ -6,7 +6,7 @@ describe('DashPipe', () => {
     expect(pipe).toBeTruthy();
   });
 
-  // it('text fail case', () => {
-  //   expect(false).toBeTruthy();
-  // });
+  it('text fail case', () => {
+    expect(false).toBeTruthy();
+  });
 });
