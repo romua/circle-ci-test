@@ -6,7 +6,7 @@
     "start": "ng serve --aot",
     "build": "ng build --aot",
     "test": "ng test --watch",
-    "test:ci": "ng test --watch",
+    "test:ci": "ng test",
     "build:ci": "ng test && ng build --aot",
     "lint": "ng lint",
     "e2e": "ng e2e"
