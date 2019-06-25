@@ -5,8 +5,4 @@ describe('DashPipe', () => {
     const pipe = new DashPipe();
     expect(pipe).toBeTruthy();
   });
-
-  it('text fail case', () => {
-    expect(false).toBeTruthy();
-  });
 });
