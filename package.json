@@ -6,12 +6,12 @@
     "start": "ng serve --aot",
     "build": "ng build --aot",
     "test": "ng test --watchAll",
-    "test:ci": "ng test",
+    "test:ci": "ng test --collect-coverage",
     "build:ci": "ng test && ng build --aot",
     "lint": "ng lint",
     "e2e": "cypress open",
     "check": "npm run lint && npm run test:ci",
-    "sonar-scanner": "node_modules/sonar-scanner/bin/sonar-scanner"
+    "sonar-scanner": "sonar-scanner"
   },
   "private": true,
   "dependencies": {
@@ -40,6 +40,7 @@
     "codelyzer": "^5.0.0",
     "cypress": "^3.3.1",
     "jest": "^24.8.0",
+    "jest-sonar-reporter": "^2.0.0",
     "sonar-scanner": "^3.1.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
