@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="C:\Users\rchap\WebstormProjects\TEST\circle-ci-test\src\app\shared\dash\dash.pipe.spec.ts">
+    <testCase name="DashPipe create an instance" duration="4"/>
+  </file>
+  <file path="C:\Users\rchap\WebstormProjects\TEST\circle-ci-test\src\app\core\components\home\home.component.spec.ts">
+    <testCase name="HomeComponent should create" duration="74"/>
+  </file>
+  <file path="C:\Users\rchap\WebstormProjects\TEST\circle-ci-test\src\app\core\components\content\content.component.spec.ts">
+    <testCase name="ContentComponent should create" duration="65"/>
+  </file>
+  <file path="C:\Users\rchap\WebstormProjects\TEST\circle-ci-test\src\app\core\components\header\header.component.spec.ts">
+    <testCase name="HeaderComponent should create" duration="66"/>
+  </file>
+  <file path="C:\Users\rchap\WebstormProjects\TEST\circle-ci-test\src\app\core\components\dashboard\dashboard.component.spec.ts">
+    <testCase name="DashboardComponent should create" duration="147"/>
+  </file>
+  <file path="C:\Users\rchap\WebstormProjects\TEST\circle-ci-test\src\app\app-container\app.component.spec.ts">
+    <testCase name="AppComponent should create the app" duration="166"/>
+  </file>
+  <file path="C:\Users\rchap\WebstormProjects\TEST\circle-ci-test\src\app\core\services\theme\theme.service.spec.ts">
+    <testCase name="ThemeService should be created" duration="12"/>
+  </file>
+</testExecutions>
