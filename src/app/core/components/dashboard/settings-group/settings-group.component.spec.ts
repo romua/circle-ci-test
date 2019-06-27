@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SettingsGroupComponent } from './settings-group.component';
+import { AppModule } from '../../../../app.module';
+import { APP_BASE_HREF } from '@angular/common';
+import { ChangeDetectorRef } from '@angular/core';
 
 describe('SettingsGroupComponent', () => {
   let component: SettingsGroupComponent;
@@ -8,9 +11,18 @@ describe('SettingsGroupComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SettingsGroupComponent ]
+      imports: [
+        AppModule
+      ],
+      providers: [
+        {
+          provide: APP_BASE_HREF,
+          useValue: ''
+        },
+        ChangeDetectorRef
+      ]
     })
-    .compileComponents();
+        .compileComponents();
   }));
 
   beforeEach(() => {
