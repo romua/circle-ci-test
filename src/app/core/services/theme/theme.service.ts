@@ -8,7 +8,6 @@ export class ThemeService {
   private body = this.document.getElementsByTagName('body')[0];
 
   constructor(@Inject(DOCUMENT) private document: Document) {
-    console.log(document);
   }
 
   getTheme(): string | null {

@@ -7,9 +7,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { SettingsGroupComponent } from './components/dashboard/settings-group/settings-group.component';
 
 const components = [
-  ContentComponent, HeaderComponent, HomeComponent, DashboardComponent
+  ContentComponent, HeaderComponent, HomeComponent, DashboardComponent, SettingsGroupComponent
 ];
 
 @NgModule({
