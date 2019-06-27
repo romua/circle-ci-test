@@ -11,7 +11,8 @@
     "lint": "ng lint",
     "e2e": "cypress open",
     "check": "npm run lint && npm run test:ci",
-    "sonar-scanner": "sonar-scanner"
+    "sonar-scanner": "sonar-scanner",
+    "precommit": "pre-commit.sh"
   },
   "private": true,
   "dependencies": {
