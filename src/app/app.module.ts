@@ -18,6 +18,7 @@ import { CoreModule } from './core/core.module';
 })
 export class AppModule implements DoBootstrap {
   ngDoBootstrap(appRef: ApplicationRef) {
+    console.log(appRef);
     appRef.bootstrap(AppComponent);
   }
 }
