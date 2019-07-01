@@ -1,0 +1,49 @@
+.employees {
+  display: flex;
+  width: 960px;
+  box-shadow: #b9b3b3 0px 0px 18px 2px;
+  padding: 20px;
+  border-radius: 6px;
+
+  .employees-left {
+    flex-grow: 1;
+    flex-basis: 100%;
+    max-height: 500px;
+    overflow-y: auto;
+
+    .employees-list {
+      //display: flex;
+      //flex-direction: column;
+      height: calc(100% - 28px);
+      width: auto;
+
+      &-item {
+        display: flex;
+        height: 20px;
+        cursor: pointer;
+      }
+
+      &-stats {
+        margin-top: 11px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  .employees-right {
+    flex-grow: 1;
+    flex-basis: 100%;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    max-height: 500px;
+    height: 500px;
+    overflow-y: auto;
+
+    &-comp-wrap {
+      width: 100%;
+    }
+  }
+}

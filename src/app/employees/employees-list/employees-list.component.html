@@ -1,0 +1,23 @@
+<main class="employees">
+  <section class="employees-left">
+    <ng-container *ngIf="employees$ | async as employees; else loading">
+      <cdk-virtual-scroll-viewport itemSize="20" class="employees-list">
+        <div *cdkVirtualFor="let employee of employees"
+             class="employees-list-item"
+             (click)="selectEmployee(employee.id)">{{employee.employee_name}}</div>
+      </cdk-virtual-scroll-viewport>
+      <div class="employees-list-stats">
+        <span>Employees: {{employees.length}}</span>
+      </div>
+    </ng-container>
+  </section>
+  <section class="employees-right">
+    <div class="employees-right-comp-wrap">
+      <app-employee [employee]="selectedEmployee"></app-employee>
+    </div>
+  </section>
+</main>
+
+<ng-template #loading>
+  Loading ...
+</ng-template>

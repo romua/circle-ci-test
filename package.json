@@ -4,14 +4,16 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --aot",
-    "build": "ng build --aot",
+    "build": "ng build --stats-json --configuration=production",
     "test": "ng test --watchAll",
     "test:ci": "ng test --collect-coverage",
     "build:ci": "ng test && ng build --aot",
     "lint": "ng lint",
     "e2e": "cypress open",
     "check": "npm run lint && npm run test:ci",
-    "sonar-scanner": "sonar-scanner"
+    "sonar-scanner": "sonar-scanner",
+    "analyze-es2015": "webpack-bundle-analyzer dist/hooks/stats-es2015.json",
+    "analyze-es5": "webpack-bundle-analyzer dist/hooks/stats-es5.json"
   },
   "private": true,
   "dependencies": {
@@ -44,6 +46,7 @@
     "sonar-scanner": "^3.1.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.4.3"
+    "typescript": "~3.4.3",
+    "webpack-bundle-analyzer": "^3.3.2"
   }
 }

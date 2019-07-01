@@ -8,8 +8,8 @@ const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'dashboard', component: DashboardComponent},
+  {path: 'employees', loadChildren: '../employees/employees.module#EmployeesModule'}
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

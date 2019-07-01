@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { EmployeesStoreService } from '../employees/services/employees-store/employees-store.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-  title = 'hooks';
+
+  constructor(private store: EmployeesStoreService) {
+    this.store.loadEmployees();
+  }
 }

@@ -1,0 +1,9 @@
+<ng-container *ngIf="employee; else noSelectedEmployee">
+  <article>
+    <header>{{ employee.employee_name }}</header>
+    <main>{{ employee | json }}</main>
+  </article>
+</ng-container>
+<ng-template #noSelectedEmployee>
+  Please choose user from the list
+</ng-template>
