@@ -1,6 +1,6 @@
 .employees {
   display: flex;
-  width: 960px;
+  width: 90vw;
   box-shadow: #b9b3b3 0px 0px 18px 2px;
   padding: 20px;
   border-radius: 6px;
@@ -12,8 +12,6 @@
     overflow-y: auto;
 
     .employees-list {
-      //display: flex;
-      //flex-direction: column;
       height: calc(100% - 28px);
       width: auto;
 
@@ -26,6 +24,7 @@
         transition: 300ms cubic-bezier(0.04, -0.07, 0.07, 1.01);
 
         &.selected {
+
           background-color: #f1f1f1;
           border-left: 4px solid;
           padding-left: 7px;
@@ -35,8 +34,12 @@
       &-stats {
         margin-top: 8px;
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         align-items: center;
+        height: 19px;
+        max-height: 19px;
+        overflow: hidden;
         justify-content: space-between;
       }
     }
@@ -54,6 +57,7 @@
     position: relative;
 
     &-comp-wrap {
+
       width: 100%;
     }
   }
@@ -71,6 +75,7 @@
         &-item {
 
           &.selected {
+
             background-color: #212121;
             border-left: 4px solid;
             padding-left: 7px;
