@@ -11,8 +11,8 @@ import {
 } from '@angular/core';
 import { Employee } from '../models/models';
 import { FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
-import _ from 'lodash';
-
+import cloneDeep from 'lodash/cloneDeep';
+import isEqual from 'lodash/isEqual';
 export type MessageType = 'warning' | 'info' | 'danger';
 
 export interface Message {
@@ -28,14 +28,14 @@ export interface Message {
 })
 export class EmployeeComponent {
   // tslint:disable-next-line:variable-name
-  private _employee: Employee;
+  public _employee: Employee;
   public formEntries: any[] = [];
   @ViewChild('errorContainer', {read: ViewContainerRef, static: false}) container: ViewContainerRef;
   @ViewChild('errorMessagesTemplate', {read: TemplateRef, static: false}) template: TemplateRef<any>;
 
   @Input() set employee(data: Employee) {
     if (data) {
-      this._employee = _.cloneDeep(data);
+      this._employee = cloneDeep(data);
       console.log(this._employee);
       this.formEntries = Object.entries(data);
       this.createForm(data);
@@ -68,7 +68,7 @@ export class EmployeeComponent {
   submitForm() {
     if (this.employeeForm.valid) {
       const updatedInfo = {
-        ..._.cloneDeep(this.employeeForm.value),
+        ...cloneDeep(this.employeeForm.value),
         id: this._employee.id,
         profile_image: this._employee.profile_image
       };
@@ -102,7 +102,7 @@ export class EmployeeComponent {
   }
 
   private emmitUpdateData(updatedInfo: any) {
-    if (_.isEqual(updatedInfo, this._employee)) {
+    if (isEqual(updatedInfo, this._employee)) {
       this.showMessage({data: ['Nothing to update'], type: 'info'});
       this.clearContainer(true);
     } else {
