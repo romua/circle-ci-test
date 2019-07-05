@@ -9,19 +9,23 @@
   color: black;
   height: $header-height;
   transition: background-color 225ms cubic-bezier(0.82, -0.01, 0.17, 1.01);
+  position: relative;
 
   &-center {
-    margin-left: auto;
+    margin: auto;
+
     &-item {
 
       &:not(:last-child) {
+        margin-left: 0;
         margin-right: 10px;
       }
     }
   }
 
   &-right {
-    margin-left: auto;
+    position: absolute;
+    right: 0;
   }
 }
 

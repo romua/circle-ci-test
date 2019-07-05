@@ -2,18 +2,25 @@
   <section class="employees-left">
     <ng-container *ngIf="employees$ | async as employees; else loading">
       <cdk-virtual-scroll-viewport itemSize="20" class="employees-list">
-        <div *cdkVirtualFor="let employee of employees"
-             class="employees-list-item"
+        <div *cdkVirtualFor="let employee of employees; trackBy: trackByFn"
+             class="employees-list-item" [ngClass]="{'selected': this.selectedEmployee?.id === employee.id}"
              (click)="selectEmployee(employee.id)">{{employee.employee_name}}</div>
       </cdk-virtual-scroll-viewport>
       <div class="employees-list-stats">
-        <span>Employees: {{employees.length}}</span>
+        <section>
+          <span>Edit mode by default</span>
+          <input #enableByDefault type="checkbox">
+        </section>
+        <section>Employees: {{employees.length}}</section>
       </div>
     </ng-container>
   </section>
   <section class="employees-right">
     <div class="employees-right-comp-wrap">
-      <app-employee [employee]="selectedEmployee"></app-employee>
+      <app-employee [employee]="selectedEmployee"
+                    [editMode]="isEdit"
+                    (edit)="enableEditMode($event)"
+                    (updatedData)="updateEmployeeData($event)"></app-employee>
     </div>
   </section>
 </main>

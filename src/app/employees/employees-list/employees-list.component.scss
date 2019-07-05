@@ -21,13 +21,23 @@
         display: flex;
         height: 20px;
         cursor: pointer;
+        align-items: center;
+        transition-property: border, background-color;
+        transition: 300ms cubic-bezier(0.04, -0.07, 0.07, 1.01);
+
+        &.selected {
+          background-color: #f1f1f1;
+          border-left: 4px solid;
+          padding-left: 7px;
+        }
       }
 
       &-stats {
-        margin-top: 11px;
+        margin-top: 8px;
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
+        align-items: center;
+        justify-content: space-between;
       }
     }
   }
@@ -41,9 +51,32 @@
     max-height: 500px;
     height: 500px;
     overflow-y: auto;
+    position: relative;
 
     &-comp-wrap {
       width: 100%;
+    }
+  }
+}
+
+
+:host-context(.theme-black) {
+
+  .employees {
+
+    .employees-left {
+
+      .employees-list {
+
+        &-item {
+
+          &.selected {
+            background-color: #212121;
+            border-left: 4px solid;
+            padding-left: 7px;
+          }
+        }
+      }
     }
   }
 }

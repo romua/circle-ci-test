@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
   <file path="C:\Users\rchap\WebstormProjects\TEST\circle-ci-test\src\app\employees\services\employees-store\employees-store.service.spec.ts">
-    <testCase name="EmployeesStoreService should be created" duration="129"/>
+    <testCase name="EmployeesStoreService should be created" duration="160"/>
+  </file>
+  <file path="C:\Users\rchap\WebstormProjects\TEST\circle-ci-test\src\app\employees\employees-list\employees-list.component.spec.ts">
+    <testCase name="EmployeesListComponent should create" duration="325"/>
+  </file>
+  <file path="C:\Users\rchap\WebstormProjects\TEST\circle-ci-test\src\app\core\components\dashboard\dashboard.component.spec.ts">
+    <testCase name="DashboardComponent should create" duration="191"/>
+  </file>
+  <file path="C:\Users\rchap\WebstormProjects\TEST\circle-ci-test\src\app\employees\pipes\label\label.pipe.spec.ts">
+    <testCase name="LabelPipe create an instance" duration="5"/>
+  </file>
+  <file path="C:\Users\rchap\WebstormProjects\TEST\circle-ci-test\src\app\employees\services\employees\employees.service.spec.ts">
+    <testCase name="EmployeesService should be created" duration="86"/>
+  </file>
+  <file path="C:\Users\rchap\WebstormProjects\TEST\circle-ci-test\src\app\core\components\dashboard\settings-group\settings-group.component.spec.ts">
+    <testCase name="SettingsGroupComponent should create" duration="129"/>
+  </file>
+  <file path="C:\Users\rchap\WebstormProjects\TEST\circle-ci-test\src\app\core\components\content\content.component.spec.ts">
+    <testCase name="ContentComponent should create" duration="25"/>
+  </file>
+  <file path="C:\Users\rchap\WebstormProjects\TEST\circle-ci-test\src\app\app-container\app.component.spec.ts">
+    <testCase name="AppComponent should create the app" duration="108"/>
+  </file>
+  <file path="C:\Users\rchap\WebstormProjects\TEST\circle-ci-test\src\app\employees\employee\employee.component.spec.ts">
+    <testCase name="EmployeeComponent should create" duration="227"/>
+  </file>
+  <file path="C:\Users\rchap\WebstormProjects\TEST\circle-ci-test\src\app\core\components\header\header.component.spec.ts">
+    <testCase name="HeaderComponent should create" duration="38"/>
+  </file>
+  <file path="C:\Users\rchap\WebstormProjects\TEST\circle-ci-test\src\app\core\components\home\home.component.spec.ts">
+    <testCase name="HomeComponent should create" duration="56"/>
+  </file>
+  <file path="C:\Users\rchap\WebstormProjects\TEST\circle-ci-test\src\app\core\services\theme\theme.service.spec.ts">
+    <testCase name="ThemeService should be created" duration="13"/>
+  </file>
+  <file path="C:\Users\rchap\WebstormProjects\TEST\circle-ci-test\src\app\shared\pipes\dash\dash.pipe.spec.ts">
+    <testCase name="DashPipe create an instance" duration="0"/>
   </file>
 </testExecutions>

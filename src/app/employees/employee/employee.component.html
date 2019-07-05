@@ -1,9 +1,46 @@
-<ng-container *ngIf="employee; else noSelectedEmployee">
-  <article>
-    <header>{{ employee.employee_name }}</header>
-    <main>{{ employee | json }}</main>
+<ng-container *ngIf="_employee; else noSelectedEmployee">
+  <div class="employee-action-group">
+    <button class="employee-action-group-button"
+            (click)="edit.emit(true)">
+      Edit
+    </button>
+  </div>
+  <article *ngIf="editMode; else viewMode">
+    <div class="employee-action-group">
+      <button class="employee-action-group-button"
+              (click)="submitForm()">
+        Save
+      </button>
+      <button class="employee-action-group-button"
+              (click)="edit.emit(false)">
+        Cancel
+      </button>
+    </div>
+    <form [formGroup]="employeeForm" class="employee-form">
+      <ng-container *ngFor="let item of formEntries; index as i;">
+        <div *ngIf="item[0] !== 'id' && item[0] !== 'profile_image'" class="employee-form-item">
+          <label [attr.for]="'prop-' + i" [ngClass]="{'employee-form-item-label': !!employeeForm.get(item[0]).value}">
+            {{item[0] | label}}
+          </label>
+          <input [attr.id]="'prop-' + i" type="text" [formControlName]="item[0]" [attr.placeholder]="item[0] | label">
+        </div>
+      </ng-container>
+      <ng-container #errorContainer></ng-container>
+    </form>
   </article>
 </ng-container>
+
 <ng-template #noSelectedEmployee>
   Please choose user from the list
+</ng-template>
+
+<ng-template #errorMessagesTemplate let-errors="data" let-class="type">
+  <div [attr.class]="'employee-form-errors ' + class">
+    {{errors.toString()}}
+  </div>
+</ng-template>
+
+<ng-template #viewMode>
+  <header>{{ _employee.employee_name }}</header>
+  <main>{{ _employee | json }}</main>
 </ng-template>

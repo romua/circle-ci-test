@@ -4,10 +4,27 @@ body {
   padding: 0;
 }
 
+* > * {
+  font-family: 'Montserrat', sans-serif;
+}
+
 a {
   color: inherit;
 
   &:hover {
 
   }
+}
+
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0px 0px 2px rgb(160, 160, 160);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
 }

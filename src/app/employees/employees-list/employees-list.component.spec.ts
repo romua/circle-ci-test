@@ -5,6 +5,8 @@ import { AppModule } from '../../app.module';
 import { APP_BASE_HREF } from '@angular/common';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { EmployeeComponent } from '../employee/employee.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LabelPipe } from '../pipes/label/label.pipe';
 
 describe('EmployeesListComponent', () => {
   let component: EmployeesListComponent;
@@ -12,10 +14,11 @@ describe('EmployeesListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [EmployeesListComponent, EmployeeComponent],
+      declarations: [EmployeesListComponent, EmployeeComponent, LabelPipe],
       imports: [
         AppModule,
-        ScrollingModule
+        ScrollingModule,
+        ReactiveFormsModule
       ],
       providers: [
         {

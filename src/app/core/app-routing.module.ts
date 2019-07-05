@@ -5,11 +5,12 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
+  {path: '', component: HomeComponent},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'employees', loadChildren: '../employees/employees.module#EmployeesModule'}
+  {path: 'employees', loadChildren: '../employees/employees.module#EmployeesModule'},
+  {path: '**', redirectTo: ''}
 ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
