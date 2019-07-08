@@ -7,12 +7,25 @@
   transition: background-color 225ms ease-out;
   cursor: pointer;
 
+  .switch-indicator {
+    display: inline-block;
+    position: absolute;
+    width: 14px;
+    top: 1px;
+    bottom: 1px;
+    background-color: white;
+    border-radius: 35px;
+    animation-duration: 223ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+  }
+
   &.checked {
     background-color: white;
 
     .switch-indicator {
-      transform: translateX(19px);
       background-color: black;
+      animation-name: checked;
     }
   }
 
@@ -20,21 +33,9 @@
     background-color: black;
 
     .switch-indicator {
-      transform: translateX(0);
       background-color: white;
+      animation-name: unchecked;
     }
-  }
-
-  .switch-indicator {
-    display: inline-block;
-    position: absolute;
-    width: 14px;
-    left: 1px;
-    top: 1px;
-    bottom: 1px;
-    background-color: white;
-    border-radius: 35px;
-    transition: transform 225ms ease-out;
   }
 
   .switch-input {
@@ -45,5 +46,32 @@
   }
 }
 
+@keyframes checked {
+  0% {
+    left: 1px;
+  }
 
+  50% {
+    left: 13px;
+    width: 24px;
+  }
 
+  100% {
+    left: 20px;
+  }
+}
+
+@keyframes unchecked {
+  0% {
+    left: 20px;
+  }
+
+  70% {
+    left: 13px;
+    width: 24px;
+  }
+
+  100% {
+    left: 1px;
+  }
+}
