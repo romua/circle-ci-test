@@ -6,7 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from '../shared/shared.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SettingsGroupComponent } from './components/dashboard/settings-group/settings-group.component';
 
 const components = [
@@ -14,7 +14,7 @@ const components = [
 ];
 
 @NgModule({
-  imports: [CommonModule, AppRoutingModule, SharedModule, FormsModule],
+  imports: [CommonModule, AppRoutingModule, SharedModule, FormsModule, ReactiveFormsModule],
   declarations: [...components],
   exports: [...components, AppRoutingModule, SharedModule]
 })

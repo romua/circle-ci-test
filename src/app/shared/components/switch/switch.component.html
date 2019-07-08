@@ -1,0 +1,10 @@
+<div #wrap class="switch-wrap"
+     (click)="handleInput(!_value)"
+     [attr.class] = "value ? 'switch-wrap checked' : 'switch-wrap unchecked'"
+>
+  <div class="switch-indicator" ></div>
+  <input #input
+         class="switch-input"
+         type="checkbox"
+  />
+</div>

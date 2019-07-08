@@ -9,10 +9,11 @@ import {
   ViewChild,
   ViewContainerRef
 } from '@angular/core';
-import { Employee } from '../models/models';
+import { Employee } from '../../models/models';
 import { FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import cloneDeep from 'lodash/cloneDeep';
 import isEqual from 'lodash/isEqual';
+
 export type MessageType = 'warning' | 'info' | 'danger';
 
 export interface Message {
@@ -64,7 +65,6 @@ export class EmployeeComponent {
     this.employeeForm = new FormGroup(group);
   }
 
-
   submitForm() {
     if (this.employeeForm.valid) {
       const updatedInfo = {
@@ -72,10 +72,9 @@ export class EmployeeComponent {
         id: this._employee.id,
         profile_image: this._employee.profile_image
       };
-      this.emmitUpdateData(updatedInfo);
+      this.emmitUpdatedData(updatedInfo);
     } else {
       const formErrors = [...this.getFormValidationErrors()];
-      console.log(formErrors);
       this.showMessage({data: formErrors, type: 'danger'});
     }
   }
@@ -101,18 +100,17 @@ export class EmployeeComponent {
     return errorMessages;
   }
 
-  private emmitUpdateData(updatedInfo: any) {
+  private emmitUpdatedData(updatedInfo: any) {
     if (isEqual(updatedInfo, this._employee)) {
       this.showMessage({data: ['Nothing to update'], type: 'info'});
       this.clearContainer(true);
     } else {
-      console.log(updatedInfo);
+      this.updatedData.emit(updatedInfo);
     }
   }
 
   private showMessage(message: Message = {data: [], type: 'danger'}) {
     this.clearContainer();
-
     if (message.data && message.data.length > 0) {
       console.log('show formErrors', message.data);
       const view = this.template.createEmbeddedView({...message});

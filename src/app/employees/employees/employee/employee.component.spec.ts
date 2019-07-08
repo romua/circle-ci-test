@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EmployeeComponent } from './employee.component';
-import { AppModule } from '../../app.module';
+import { AppModule } from '../../../app.module';
 import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LabelPipe } from '../pipes/label/label.pipe';
+import { LabelPipe } from '../../pipes/label/label.pipe';
 
 describe('EmployeeComponent', () => {
   let component: EmployeeComponent;

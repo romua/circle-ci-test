@@ -5,7 +5,8 @@
     <a class="navigation-center-item" routerLink="/employees">Virtual scroll</a>
   </section>
   <section class="navigation-right">
-    <button (click)="switchTheme('theme-white')">white</button>
-    <button (click)="switchTheme('theme-black')">black</button>
+<!--    <button (click)="switchTheme('theme-white')">white</button>-->
+<!--    <button (click)="switchTheme('theme-black')">black</button>-->
+    <app-switch [formControl]="themeControl"></app-switch>
   </section>
 </nav>

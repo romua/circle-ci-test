@@ -4,11 +4,11 @@ import { Employee } from '../models/models';
 import { EmployeesStoreService } from '../services/employees-store/employees-store.service';
 
 @Component({
-  selector: 'app-employees-list',
-  templateUrl: './employees-list.component.html',
-  styleUrls: ['./employees-list.component.scss']
+  selector: 'app-employees',
+  templateUrl: './employees.component.html',
+  styleUrls: ['./employees.component.scss']
 })
-export class EmployeesListComponent implements OnInit {
+export class EmployeesComponent implements OnInit {
   @ViewChild('enableByDefault', {static: false}) enableByDefault: ElementRef;
 
   employees$: Observable<Employee[]>;
@@ -20,11 +20,10 @@ export class EmployeesListComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.storeEmployee.loadEmployees();
   }
 
   trackByFn(index, item) {
-    return item.id; // or item.id
+    return item.id;
   }
 
   selectEmployee(id: string) {

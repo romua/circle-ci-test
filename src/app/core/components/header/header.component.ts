@@ -1,30 +1,36 @@
 import {
-  AfterContentInit,
+  AfterContentInit, AfterViewInit,
   Component,
   OnInit,
 } from '@angular/core';
 import { Theme, ThemeService } from '../../services/theme/theme.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit, AfterContentInit {
-  hi = false;
+export class HeaderComponent implements AfterViewInit {
+  themeControl: FormControl = new FormControl();
 
   constructor(private theme: ThemeService) {
-    this.theme.setTheme('theme-white');
-  }
-
-  ngOnInit() {
+    setTimeout(() => {
+      this.themeControl.disable();
+    }, 3000);
   }
 
   switchTheme(newTheme: Theme): void {
-    this.hi = !this.hi;
     this.theme.setTheme(newTheme);
   }
 
-  ngAfterContentInit(): void {
+  ngAfterViewInit() {
+    this.themeControl.valueChanges
+        .subscribe({
+          next: value => {
+            console.log(value);
+            this.switchTheme(value ? 'theme-black' : 'theme-white');
+          }
+        });
   }
 }

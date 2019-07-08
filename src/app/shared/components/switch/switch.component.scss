@@ -1,0 +1,49 @@
+.switch-wrap {
+  display: inline-block;
+  position: relative;
+  width: 35px;
+  border-radius: 35px;
+  background-color: black;
+  transition: background-color 225ms ease-out;
+  cursor: pointer;
+
+  &.checked {
+    background-color: white;
+
+    .switch-indicator {
+      transform: translateX(19px);
+      background-color: black;
+    }
+  }
+
+  &.unchecked {
+    background-color: black;
+
+    .switch-indicator {
+      transform: translateX(0);
+      background-color: white;
+    }
+  }
+
+  .switch-indicator {
+    display: inline-block;
+    position: absolute;
+    width: 14px;
+    left: 1px;
+    top: 1px;
+    bottom: 1px;
+    background-color: white;
+    border-radius: 35px;
+    transition: transform 225ms ease-out;
+  }
+
+  .switch-input {
+    margin: 0;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+}
+
+
+

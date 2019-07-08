@@ -44,7 +44,10 @@
 
       &.ng-invalid:not(.ng-untouched) {
         border-bottom: 3px solid #ff372c91;
+        background-color: #ffb3ae91;
       }
+
+
     }
   }
 
@@ -66,7 +69,14 @@
     }
 
     &.info {
-      background-color: #80fffc;
+      background-color: #bbe7ff;
     }
+  }
+}
+
+:host-context(.theme-black) {
+
+  ::placeholder {
+    color: white;
   }
 }
